@@ -1,18 +1,32 @@
 
+## first example driver (fed)
 
-Warning: Try this at your own risk
+Warning: Try this at your own risk. This may end up making your os unstable.
+
+### Study:
+
+
 http://www.tldp.org/LDP/lkmpg/2.6/html/x279.html
 https://unix.stackexchange.com/questions/118116/linux-what-is-a-tainted-kernel
 http://www.kroah.com/log/blog/2013/09/02/booting-a-self-signed-linux-kernel/
 
-$git clone this_repo
+
+---
+
+#### Commands:
+```
+$git clone https://github.com/rahuldeo2047/example-linux-drivers.git
 $cd your_module_path
-
+```
+##### Warning: Below command will start with erasing all the syslog msgs
+```
 $sudo sh ./build_install_fed_driver.sh 
+```
 
-log:
+#### log:
 
-$ sudo sh ./build_install_fed_driver.sh 
+```
+$sudo sh ./build_install_fed_driver.sh 
 dmesg -c: Clearning all earlier syslogs ...
 
 make: Building ...
@@ -41,7 +55,8 @@ fed                    12423  0
 
 syslog: Please wait till final "fed: module registered" msg ... (^C to exit)
 Nov 26 20:04:10 multiverse kernel: [13583.759438] fed: module unregistered
-Nov 26 20:04:33 multiverse kernel: [13583.767067] fed: module registered<4>[13606.262284] sd 6:0:0:0: [sdb] Test WP failed, assume Write Enabled
+Nov 26 20:04:33 multiverse kernel: [13583.767067] fed: module registered
 Nov 26 20:05:37 multiverse kernel: [13670.896981] fed: module unregistered
-Nov 26 20:06:16 multiverse kernel: [13670.904768] fed: module registered<4>[13709.712034] sd 6:0:0:0: [sdb] Test WP failed, assume Write Enabled
+Nov 26 20:06:16 multiverse kernel: [13670.904768] fed: module registered
 ^C
+```
